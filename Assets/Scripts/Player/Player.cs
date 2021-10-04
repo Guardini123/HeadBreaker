@@ -30,12 +30,6 @@ public class Player : MonoBehaviour
         PauseManager.pauseManager.pause += SetCanMove;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public Vector3 GetDirection() => speedInDirection;
 
     public void SetCanMove(bool canMoveFlag)

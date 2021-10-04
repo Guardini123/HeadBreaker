@@ -9,46 +9,14 @@ public class PlayerMovementInput : MonoBehaviour
     [SerializeField] private KeyCode keyPlusDirection;
     [SerializeField] private KeyCode keyMinusDirection;
 
-    [Header("Invert input keys if player want. Need to restart game!")]
-    [SerializeField] private bool invertAxis;
-
     private Player player;
+
 
     private void Start()
     {
         player = this.GetComponent<Player>();
-
-        if (invertAxis)
-        {
-            InvertPlayerInput();
-        }
-
-        Vector3 direction = player.GetDirection();
-        //подписка на Ui ивенты
-        if (direction.z != 0)
-        {
-            //двигается вверх-вниз
-            UiMovementInput.uiInput.downBtnDown += PlayerPressedMinusDirectionDown;
-            UiMovementInput.uiInput.downBtnUp += PlayerPressedMinusDirectionUp;
-            UiMovementInput.uiInput.upBtnDown += PlayerPressedPlusDirectionDown;
-            UiMovementInput.uiInput.upBtnUp += PlayerPressedPlusDirectionUp;
-        }
-        if (direction.x != 0)
-        {
-            //двигается вправо-влево
-            UiMovementInput.uiInput.leftBtnDown += PlayerPressedMinusDirectionDown;
-            UiMovementInput.uiInput.leftBtnUp += PlayerPressedMinusDirectionUp;
-            UiMovementInput.uiInput.rightBtnDown += PlayerPressedPlusDirectionDown;
-            UiMovementInput.uiInput.rightBtnUp += PlayerPressedPlusDirectionUp;
-        }
     }
 
-    public void InvertPlayerInput()
-    {
-        KeyCode buf = keyPlusDirection;
-        keyPlusDirection = keyMinusDirection;
-        keyMinusDirection = buf;
-    }
 
     private void Update()
     {
