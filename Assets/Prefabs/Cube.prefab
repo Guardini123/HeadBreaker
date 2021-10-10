@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 6817860907973684717}
   - component: {fileID: 6817860907973684716}
   - component: {fileID: 6817860907973684705}
-  - component: {fileID: 6817860907973684704}
-  - component: {fileID: 6817860907973684706}
   - component: {fileID: 8493402375946932647}
   - component: {fileID: 9158684798201156028}
   m_Layer: 0
@@ -61,6 +59,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -85,6 +84,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &6817860907973684716
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -114,33 +114,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 114
   m_CollisionDetection: 2
---- !u!114 &6817860907973684704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6817860907973684715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91eb3babf25f40f4e9994427a85a1240, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6817860907973684706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6817860907973684715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5620d7cab973cbf49b09438074857bdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyPlusDirection: 0
-  keyMinusDirection: 0
-  invertAxis: 0
 --- !u!114 &8493402375946932647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +126,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c2c4b8f4c40a3248a2b34193812173a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedInDirection: {x: 0, y: 0, z: 0.75}
+  _moveDirection: {x: 0, y: 0, z: 1}
+  _speed: 30
+  _moveKey: 119
+  _invertMoveKey: 115
 --- !u!114 &9158684798201156028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,4 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12b0abb0881a7c43aca387fc5f3d954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canLoadNextLevel: 0
+  OnEndLevel:
+    m_PersistentCalls:
+      m_Calls: []
+  _canLoadNextLevel: 0

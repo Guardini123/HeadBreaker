@@ -1,35 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EndThisLevelOnTrigger : MonoBehaviour
 {
-    public static EndThisLevelOnTrigger instance { get; private set; }
+    public UnityEvent OnEndLevel;
 
-    public delegate void EndLevelByTriggerAction();
-    public event EndLevelByTriggerAction endLevelByTrigger;
+    [SerializeField] private bool _canLoadNextLevel;
 
-    [SerializeField] private bool canLoadNextLevel;
 
-    private void Awake()
-    {
-        instance = this;
-    }
 
-    // Start is called before the first frame update
     void Start()
     {
-        canLoadNextLevel = true;
+        _canLoadNextLevel = true;
+        OnEndLevel.AddListener(LevelManager.Instance.FinishLevel);
     }
 
-    private void OnTriggerEnter(Collider other)
+
+	private void OnDestroy()
+	{
+        OnEndLevel.RemoveAllListeners();
+	}
+
+
+	private void OnTriggerEnter(Collider other)
     {
-        if (canLoadNextLevel)
+        if (other.gameObject.CompareTag("Finish"))
         {
-            if ((this.gameObject.CompareTag("Player")) && (other.gameObject.CompareTag("Finish")))
+            if (_canLoadNextLevel)
             {
-                endLevelByTrigger?.Invoke();
+                OnEndLevel?.Invoke();
             }
-        }
+        } 
     }
 }

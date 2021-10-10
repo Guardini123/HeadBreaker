@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PanInf : MonoBehaviour
+public class PanInfUi : MonoBehaviour
 {
     [SerializeField] private Image targetImage;
     [SerializeField] private Text targetText;

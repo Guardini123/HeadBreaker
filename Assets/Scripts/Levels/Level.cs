@@ -2,41 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "LevelData", menuName ="Level")]
-public class Level : ScriptableObject
+
+public class Level : MonoBehaviour
 {
-    [SerializeField] private string levelName;
-    [SerializeField] private string levelDescription;
-    [SerializeField] private Sprite levelPic;
+    [SerializeField] private string _levelName;
+    [SerializeField] private string _levelDescription;
+    [SerializeField] private Sprite _levelPic;
+    [SerializeField] private List<Player> _levelPlayers;
+    [HideInInspector] public float BestTime;
 
-    
 
-    /// <summary>
-    /// Return level's name.
-    /// </summary>
-    /// <returns> Level's name. </returns>
-    public string GetLevelName()
-    {
-        return levelName;
-    }
+	/// <summary>
+	/// Level's name.
+	/// </summary>
+	public string Name => _levelName;
 
 
     /// <summary>
-    /// Return level's description. 
+    /// Level's description. 
     /// </summary>
-    /// <returns> Level's description. </returns>
-    public string GetLevelDescription()
-    {
-        return levelDescription;
-    }
+    public string Description => _levelDescription;
 
 
     /// <summary>
-    /// Return picture of level.
+    /// Level's picture.
     /// </summary>
-    /// <returns> Level's picture. </returns>
-    public Sprite GetLevelPic()
-    {
-        return levelPic;
-    }
+    public Sprite Pic => _levelPic;
+
+
+    /// <summary>
+    /// Level's players.
+    /// </summary>
+    public List<Player> Players => _levelPlayers;
 }
