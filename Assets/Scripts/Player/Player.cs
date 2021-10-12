@@ -25,15 +25,9 @@ public class Player : MonoBehaviour
 	private void Update()
 	{
         if (Input.GetKey(_moveKey))
-        {
-            /*_currentSpeed = Vector3.zero;*/
             MovePlayer();
-        }
         if (Input.GetKey(_invertMoveKey))
-        {
-            /*_currentSpeed = Vector3.zero;*/
             MovePlayer(true);
-        }
     }
 
 
@@ -46,25 +40,7 @@ public class Player : MonoBehaviour
 
     public void MovePlayer(bool invertDirection = false)
 	{
-		if (invertDirection)
-		{
-            _currentSpeed = _moveDirection.normalized * _speed * -1;
-		}
-		else
-		{
-            _currentSpeed = _moveDirection.normalized * _speed;
-        }
-    }
-
-
-    public void MovePlayerByUI()
-	{
         _currentSpeed = _moveDirection.normalized * _speed;
-    }
-
-
-    public void MovePlayerByUIInvert()
-	{
-        _currentSpeed = _moveDirection.normalized * _speed * -1;
+        _currentSpeed = invertDirection ? _currentSpeed * -1 : _currentSpeed;
     }
 }

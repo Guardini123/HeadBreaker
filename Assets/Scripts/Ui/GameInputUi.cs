@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
+
 
 public class GameInputUi : MonoBehaviour
 {
     public static GameInputUi Instance { get; private set; }
 
-	[SerializeField] private BtnUserInputSupportUi _moveButtonUp;
-	[SerializeField] private BtnUserInputSupportUi _moveButtonDown;
-	[SerializeField] private BtnUserInputSupportUi _moveButtonRight;
-	[SerializeField] private BtnUserInputSupportUi _moveButtonLeft;
+	[SerializeField] private BtnPressSupportUi _moveButtonUp;
+	[SerializeField] private BtnPressSupportUi _moveButtonDown;
+	[SerializeField] private BtnPressSupportUi _moveButtonRight;
+	[SerializeField] private BtnPressSupportUi _moveButtonLeft;
 
 
 	private void Awake()
@@ -30,14 +32,14 @@ public class GameInputUi : MonoBehaviour
 		{
 			if(player.MoveDirection.z != 0)
 			{
-				_moveButtonUp.OnPress.AddListener(player.MovePlayerByUI);
-				_moveButtonDown.OnPress.AddListener(player.MovePlayerByUIInvert);
+				_moveButtonUp.OnPress.AddListener(() => player.MovePlayer());
+				_moveButtonDown.OnPress.AddListener(() => player.MovePlayer(true));
 			}
 
 			if (player.MoveDirection.x != 0)
 			{
-				_moveButtonRight.OnPress.AddListener(player.MovePlayerByUI);
-				_moveButtonLeft.OnPress.AddListener(player.MovePlayerByUIInvert);
+				_moveButtonRight.OnPress.AddListener(() => player.MovePlayer());
+				_moveButtonLeft.OnPress.AddListener(() => player.MovePlayer(true));
 			}
 		}
 	}

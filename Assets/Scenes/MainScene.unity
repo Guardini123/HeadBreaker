@@ -1936,6 +1936,7 @@ GameObject:
   - component: {fileID: 397148225}
   - component: {fileID: 397148224}
   - component: {fileID: 397148228}
+  - component: {fileID: 397148230}
   - component: {fileID: 397148229}
   m_Layer: 5
   m_Name: BtnRight
@@ -1982,8 +1983,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 397148228}
-          m_TargetAssemblyTypeName: BtnInputUi, Assembly-CSharp
-          m_MethodName: PressOrNotButton
+          m_TargetAssemblyTypeName: BtnPressSupportUi, Assembly-CSharp
+          m_MethodName: PressBtn
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1998,8 +1999,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 397148228}
-          m_TargetAssemblyTypeName: BtnInputUi, Assembly-CSharp
-          m_MethodName: PressOrNotButton
+          m_TargetAssemblyTypeName: BtnPressSupportUi, Assembly-CSharp
+          m_MethodName: PressBtn
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2114,18 +2115,45 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397148222}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4fb73736b5e1c8429688f28d503e477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStartStandalone:
+  OnStandaloneActions:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 397148222}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &397148230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397148222}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cccf4f7d7467914ca038551c8624e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnStartActions:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 397148229}
+        m_TargetAssemblyTypeName: StandaloneStartAction, Assembly-CSharp
+        m_MethodName: StandaloneAction
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2460,6 +2488,7 @@ GameObject:
   - component: {fileID: 496822671}
   - component: {fileID: 496822670}
   - component: {fileID: 496822674}
+  - component: {fileID: 496822676}
   - component: {fileID: 496822675}
   m_Layer: 5
   m_Name: BtnUp
@@ -2506,8 +2535,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 496822674}
-          m_TargetAssemblyTypeName: BtnInputUi, Assembly-CSharp
-          m_MethodName: PressOrNotButton
+          m_TargetAssemblyTypeName: BtnUserInputSupportUi, Assembly-CSharp
+          m_MethodName: PressBtn
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2522,8 +2551,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 496822674}
-          m_TargetAssemblyTypeName: BtnInputUi, Assembly-CSharp
-          m_MethodName: PressOrNotButton
+          m_TargetAssemblyTypeName: BtnUserInputSupportUi, Assembly-CSharp
+          m_MethodName: PressBtn
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2638,18 +2667,45 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 496822668}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4fb73736b5e1c8429688f28d503e477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStartStandalone:
+  OnStandaloneActions:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 496822668}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &496822676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496822668}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cccf4f7d7467914ca038551c8624e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnStartActions:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 496822675}
+        m_TargetAssemblyTypeName: StandaloneStartAction, Assembly-CSharp
+        m_MethodName: StandaloneAction
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4057,6 +4113,7 @@ GameObject:
   - component: {fileID: 694282459}
   - component: {fileID: 694282462}
   - component: {fileID: 694282463}
+  - component: {fileID: 694282465}
   - component: {fileID: 694282464}
   m_Layer: 5
   m_Name: BtnDown
@@ -4185,8 +4242,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 694282463}
-          m_TargetAssemblyTypeName: BtnInputUi, Assembly-CSharp
-          m_MethodName: PressOrNotButton
+          m_TargetAssemblyTypeName: BtnPressSupportUi, Assembly-CSharp
+          m_MethodName: PressBtn
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4201,8 +4258,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 694282463}
-          m_TargetAssemblyTypeName: BtnInputUi, Assembly-CSharp
-          m_MethodName: PressOrNotButton
+          m_TargetAssemblyTypeName: BtnPressSupportUi, Assembly-CSharp
+          m_MethodName: PressBtn
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4235,18 +4292,45 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694282457}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4fb73736b5e1c8429688f28d503e477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStartStandalone:
+  OnStandaloneActions:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 694282457}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &694282465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694282457}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cccf4f7d7467914ca038551c8624e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnStartActions:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 694282464}
+        m_TargetAssemblyTypeName: StandaloneStartAction, Assembly-CSharp
+        m_MethodName: StandaloneAction
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7350,9 +7434,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1378045612}
-  - component: {fileID: 1378045611}
-  - component: {fileID: 1378045613}
   - component: {fileID: 1378045609}
+  - component: {fileID: 1378045611}
+  - component: {fileID: 1378045610}
+  - component: {fileID: 1378045613}
   m_Layer: 0
   m_Name: GlobalScripts
   m_TagString: Untagged
@@ -7376,6 +7461,21 @@ MonoBehaviour:
   _moveButtonDown: {fileID: 694282463}
   _moveButtonRight: {fileID: 397148228}
   _moveButtonLeft: {fileID: 1684742062}
+--- !u!114 &1378045610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378045608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be095b4a4c0935745b9c5b73858c1855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnStopwatchStop:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1378045611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8823,6 +8923,7 @@ GameObject:
   - component: {fileID: 1684742059}
   - component: {fileID: 1684742058}
   - component: {fileID: 1684742062}
+  - component: {fileID: 1684742064}
   - component: {fileID: 1684742063}
   m_Layer: 5
   m_Name: BtnLeft
@@ -8869,8 +8970,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1684742062}
-          m_TargetAssemblyTypeName: BtnInputUi, Assembly-CSharp
-          m_MethodName: PressOrNotButton
+          m_TargetAssemblyTypeName: BtnPressSupportUi, Assembly-CSharp
+          m_MethodName: PressBtn
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -8885,8 +8986,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1684742062}
-          m_TargetAssemblyTypeName: BtnInputUi, Assembly-CSharp
-          m_MethodName: PressOrNotButton
+          m_TargetAssemblyTypeName: BtnPressSupportUi, Assembly-CSharp
+          m_MethodName: PressBtn
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9001,18 +9102,45 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1684742056}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4fb73736b5e1c8429688f28d503e477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStartStandalone:
+  OnStandaloneActions:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1684742056}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1684742064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684742056}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cccf4f7d7467914ca038551c8624e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnStartActions:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1684742063}
+        m_TargetAssemblyTypeName: StandaloneStartAction, Assembly-CSharp
+        m_MethodName: StandaloneAction
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

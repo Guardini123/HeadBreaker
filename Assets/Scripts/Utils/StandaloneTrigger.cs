@@ -4,15 +4,15 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-public class StandaloneStartAction : MonoBehaviour
+public class StandaloneTrigger : MonoBehaviour
 {
-    public UnityEvent OnStartStandalone;
+    public UnityEvent OnStandaloneActions;
 
 
-    void Start()
+    public void StandaloneAction()
     {
 #if UNITY_EDITOR || UNITY_STANDALONE
-        OnStartStandalone?.Invoke();
+        OnStandaloneActions?.Invoke();
 #endif
     }
 }

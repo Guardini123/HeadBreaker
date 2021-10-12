@@ -999,7 +999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelName: Lvl1
   _levelDescription: sdf dsfs ds das
-  _levelPic: {fileID: 21300000, guid: d0697fcf70a95c0438b2cac4454507e2, type: 3}
+  _levelPic: {fileID: 21300000, guid: 3fb70e1fd22a41c45ad2032a49e2cb26, type: 3}
   _levelPlayers:
   - {fileID: 3096008075587723918}
   - {fileID: 3686306420024651152}
