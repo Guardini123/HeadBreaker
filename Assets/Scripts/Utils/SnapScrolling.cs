@@ -38,6 +38,15 @@ public class SnapScrolling : MonoBehaviour
     public UnityEvent OnPansCreated;
 
 
+    public UnityEvent OnPanSelected;
+
+
+    public UnityEvent OnFirstPanSelected;
+
+
+    public UnityEvent OnLastPanSelected;
+
+
     /// <summary>
     /// Returns id of selected pan
     /// </summary>
@@ -59,6 +68,7 @@ public class SnapScrolling : MonoBehaviour
 
 	private void InitPans()
     {
+        Clear();
         _contentRect = GetComponent<RectTransform>();
         _instPans = new GameObject[_panCount];
         _instPansPos = new Vector2[_panCount];
@@ -107,6 +117,10 @@ public class SnapScrolling : MonoBehaviour
             {
                 nearestPos = distance;
                 _selectedPanId = i;
+                OnPanSelected?.Invoke();
+
+                if (_selectedPanId == 0) OnFirstPanSelected?.Invoke();
+                if (_selectedPanId == _panCount - 1) OnLastPanSelected?.Invoke();
             }
             float scale = Mathf.Clamp(1 / (distance / _panPosOffset) * _panScaleOffset, 0.7f, 1f);
             _instPansScale[i].x = Mathf.SmoothStep(_instPans[i].transform.localScale.x, scale, _scaleSpeed * Time.fixedDeltaTime);
@@ -178,4 +192,33 @@ public class SnapScrolling : MonoBehaviour
             _contentRect.anchoredPosition = _contentVector2;
         }
     }
+
+
+    public void NextPan()
+	{
+        var targetId = _selectedPanId + 1;
+        if (targetId > _panCount - 1) return;
+        InitSnapFromNotFirst(targetId);
+	}
+
+
+    public void PreviousPan()
+	{
+        var targetId = _selectedPanId - 1;
+        if (targetId < 0) return;
+        InitSnapFromNotFirst(targetId);
+    }
+
+
+    private void Clear()
+	{
+        if(_instPans == null) return;
+
+        if (_instPans.Length == 0) return;
+
+        foreach(var pan in _instPans)
+		{
+            GameObject.Destroy(pan);
+		}
+	}
 }
