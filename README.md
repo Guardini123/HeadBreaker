@@ -1,2 +1,2 @@
 # HeadBreaker
-A little mobile game on Unity in the puzzle genre.
+A little mobile and standalone game on Unity in the puzzle genre.
