@@ -7,7 +7,7 @@ using TMPro;
 [RequireComponent(typeof(TMP_Text))]
 public class TextBtnKeyUi : MonoBehaviour
 {
-	[SerializeField] private BtnKeyboardtUi _targetBtn;
+	[SerializeField] private BtnKeyboardUi _targetBtn;
 
     private TMP_Text _textField;
 

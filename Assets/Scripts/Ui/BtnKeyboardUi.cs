@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 
 
-public class BtnKeyboardtUi : MonoBehaviour
+public class BtnKeyboardUi : MonoBehaviour
 {
     [SerializeField] private KeyCode _keyToEnable;
     public KeyCode KeyToEnable => _keyToEnable;
