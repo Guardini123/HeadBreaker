@@ -22,15 +22,6 @@ public class Player : MonoBehaviour
     }
 
 
-	private void Update()
-	{
-        if (Input.GetKey(_moveKey))
-            MovePlayer();
-        if (Input.GetKey(_invertMoveKey))
-            MovePlayer(true);
-    }
-
-
 	private void FixedUpdate()
     {
         rb.AddForce(_currentSpeed * Time.fixedDeltaTime, ForceMode.Impulse);

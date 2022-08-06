@@ -199,7 +199,7 @@ public class SnapScrolling : MonoBehaviour
         var targetId = _selectedPanId + 1;
         if (targetId > _panCount - 1) return;
         InitSnapFromNotFirst(targetId);
-	}
+    }
 
 
     public void PreviousPan()
